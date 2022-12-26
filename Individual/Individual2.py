@@ -19,20 +19,10 @@ if __name__ == "__main__":
         print("Передайте имя файла в качестве аргумента командной строки.")
         quit()
     try:
-        # Открываем файл на чтение
-        inf = open(sys.argv[1], "r")
-
         # Читаем первую строку из файла
-        line = inf.readline()
-
-        NUM_LINES = 10
-        count = 0
-        while count < NUM_LINES and line != "":
-            line = line.rstrip()
-            count = count + 1
-            print(line)
-            line = inf.readline()
-        inf.close()
+        with open(sys.argv[1], "r") as fileptr:
+            content = fileptr.readlines(10)
+        print(content)
 
     except IOError:
         # Отображаем ошибку, если с чтением из файла возникли проблемы
