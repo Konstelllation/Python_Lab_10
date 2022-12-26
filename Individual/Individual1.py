@@ -10,7 +10,7 @@
 
 if __name__ == "__main__":
     with open("individual1.txt", "r") as txt:
-        content = txt.readlines()[0:3]
+            content = txt.readlines()[0:3]
         content.reverse()
         for line in content:
             print(line)
